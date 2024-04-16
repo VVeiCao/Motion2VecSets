@@ -1,0 +1,25 @@
+type: DT4D
+dataset_path: /mnt/hdd/motion_animal
+mode: ae
+stage: shape
+repeat: 1 # enlarge the dataset by repeating the data, 1 -> no repeat
+pc_size: 2048 # surface sampling
+num_samples: 1024 # vol + near for each
+seed: 0
+
+# Model setting
+ae_model: kl_d512_m512_l8
+
+# Training
+batch_size: 22 # 22 is max for 24GB GPU memory
+lr: 0.0001 
+kl_weight: 0.001
+epochs: 100
+warmup_epochs: 0
+accum_iter: 2 
+save_every: 10
+eval_every: 10
+
+# From which (if you want to resume or load ckpt)
+resume: False
+start_epoch: 0

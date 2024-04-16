@@ -1,0 +1,42 @@
+# Basic 
+type: DFAUST
+dataset_path: /mnt/hdd/motion/DFAUST_mesh/
+mode: diff
+stage: deform
+repeat: 1 # enlarge the dataset by repeating the data, 1 -> no repeat
+pc_size: 2048 # surface sampling
+num_samples: 1024 # vol + near for each
+seed: 0
+
+# Input setting
+n_inputs: 300
+inputs_noise_std: 0.001
+use_half: False
+use_depth: True
+
+length_sequence: 17
+offset_sequence: 15
+n_training_frames: 5
+
+time_attn: True
+is_corr: False
+
+shape_ae_model: kl_d512_m512_l8
+shape_ae_model_path: ./ckpts/DFAUST/dfaust_shape_ae.pth
+
+deform_ae_model: kl_d512_m512_l32
+deform_ae_model_path: ./ckpts/DFAUST/dfaust_deform_ae.pth
+
+diff_model: surf300_edm
+
+# Training
+batch_size: 3 # It's max for 24GB GPU
+lr: 0.0001
+epochs: 50
+warmup_epochs: 0
+accum_iter: 2 
+save_every: 10
+eval_every: 10
+
+# From which (if you want to resume or load ckpt)
+resume: False
