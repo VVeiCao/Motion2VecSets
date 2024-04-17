@@ -213,7 +213,7 @@ def main(args):
         )
         
         misc.save_model(
-            args=args, model=model, model_without_ddp=model_without_ddp, optiizer=optimizer,
+            args=args, model=model, model_without_ddp=model_without_ddp, optimizer=optimizer,
             loss_scaler=loss_scaler, epoch=epoch, log_dir=log_dir, tmp_save = True)
 
         
