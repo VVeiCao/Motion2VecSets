@@ -1,11 +1,21 @@
-# Motion2Vecsets: 4D Latent Vector Set Diffusion for Non-rigid Shape Reconstruction and Tracking
+<div align="center">
+<h2>🐎Motion2Vecsets: 4D Latent Vector Set Diffusion for Non-rigid Shape Reconstruction and Tracking</h2>
 
-### CVPR2024 [Project Page](https://vveicao.github.io/projects/Motion2VecSets/)
+[**Wei Cao**](https://vveicao.github.io/)<sup>1*</sup> · [**Chang Luo**](https://github.com/netbeifeng)<sup>1*</sup> · [**Biao Zhang**](https://1zb.github.io/)<sup>2</sup> <br>
+[**Matthias Nießner**](https://niessnerlab.org/members/matthias_niessner/profile.html)<sup>1</sup> · [**Jiapeng Tang**](https://tangjiapeng.github.io/)<sup>1</sup>
 
-[\[Arxiv\]](https://arxiv.org/abs/2401.06614) [\[Paper\]](https://arxiv.org/pdf/2401.06614) [\[Project Page\]](https://vveicao.github.io/projects/Motion2VecSets/)
+<sup>1</sup>Technical University of Munich  · <sup>2</sup>King Abdullah University of Science and Technology <br>
+<sub>(* indicates equal contribution)</sub>
 
-Wei Cao*, Chang Luo*, Biao Zhang, Matthias Nießner, Jiapeng Tang
-(* indicates equal contribution)
+**CVPR 2024**
+
+<a href="https://arxiv.org/abs/2401.06614"><img src='https://img.shields.io/badge/arXiv-M2V-firebrick?logo=arxiv' alt='Arxiv'></a>
+<a href="https://arxiv.org/pdf/2401.06614.pdf"><img src='https://img.shields.io/badge/PDF-M2V-orange?logo=googledocs&logoColor=white' alt='PDF'></a>
+<a href='https://vveicao.github.io/projects/Motion2VecSets/'><img src='https://img.shields.io/badge/Project_Page-M2V-green?logo=googlechrome&logoColor=white' alt='Project Page'></a>
+<a href='https://www.youtube.com/watch?v=VXI3y2o0SqY&ab_channel=MatthiasNiessner'><img src='https://img.shields.io/badge/Video-M2V-red?logo=youtube' alt='Youtube Video'></a>
+</div>
+
+[\[Arxiv\]](https://arxiv.org/abs/2401.06614) [\[Paper\]](https://arxiv.org/pdf/2401.06614.pdf) [\[Project Page\]](https://vveicao.github.io/projects/Motion2VecSets/) [\[Video\]](https://www.youtube.com/watch?v=VXI3y2o0SqY&ab_channel=MatthiasNiessner) 
 
 ![teaser](./img/teaser.jpg)
 We present <b
