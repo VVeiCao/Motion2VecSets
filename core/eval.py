@@ -241,7 +241,7 @@ def main():
                         )
                 
                 if config_yaml.vis_input:
-                    vis_dir = f'{output_dir}/vis/inputs'
+                    vis_dir = f'{out_path}/vis/inputs'
                     os.makedirs(vis_dir, exist_ok=True)
                     for i in range(cond[0].shape[0]):
                         pcd = o3d.geometry.PointCloud()
@@ -251,7 +251,7 @@ def main():
                 
                 # error map
                 if config_yaml.vis_error_map:
-                    vis_dir = f'{output_dir}/vis/error_map'
+                    vis_dir = f'{out_path}/vis/error_map'
                     os.makedirs(vis_dir, exist_ok=True)
                     for j in range(len(colored_pcd)):
                         defomed_colored_mesh = trimesh.Trimesh(vertices= deformed_verts[j].cpu().numpy(), faces=faces, vertex_colors=colored_pcd[j], process=False)
@@ -259,7 +259,7 @@ def main():
 
                 # corr
                 if config_yaml.vis_corr_map:
-                    vis_dir = f'{output_dir}/vis/corr_map'
+                    vis_dir = f'{out_path}/vis/corr_map'
                     os.makedirs(vis_dir, exist_ok=True)
                     for j in range(len(colored_pcd)):
                         vertices = deformed_verts[j].cpu().numpy()
