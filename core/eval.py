@@ -188,7 +188,7 @@ def main():
         batch_cnt = 0
         for (data,meta_info) in metric_logger.log_every(data_loader, 1, header):
             batch_cnt += 1
-            if batch_cnt % 666 == 0:
+            if batch_cnt % 1 == 0:
                 surface = data['surface']
                 points = data['points']
                 labels = data['labels']
@@ -213,19 +213,6 @@ def main():
                 input_src = cond[:,:1].repeat(1,17,1,1)
                 input_tgt = cond[:,:17]
                 
-                print("input_src shape: ", input_src.shape)
-                print("input_tgt shape: ", input_tgt.shape)
-                
-                import open3d as o3d
-                input_tgt = input_tgt[0]
-                for i in range(T):
-                    # Output input_tgt
-                    pcd = o3d.geometry.PointCloud()
-                    pcd.points = o3d.utility.Vector3dVector(input_tgt[i].detach().cpu().numpy())
-                    o3d.io.write_point_cloud(f'inputs_{i}.ply', pcd)
-                raise ValueError("Stop here")
-                
-                    
                 shape_cond = shape_sampled_array[:1,:].repeat(T,1,1).unsqueeze(0)
                 
                 deform_sampled_array = deform_model.sample(device, 
