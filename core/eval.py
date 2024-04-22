@@ -200,7 +200,7 @@ def main():
                 cond = cond.to(device, non_blocking=True)
                 
 
-                shape_sampled_array = shape_model.sample(device, random=True, cond=cond[0]).float() #  torch.Size([17, 512, 8])
+                shape_sampled_array = shape_model.sample(device, random=True, cond=cond[0]).float()
 
                 model = meta_info['model'][0]
                 start_idx = meta_info['start_idx'][0]
@@ -210,8 +210,8 @@ def main():
                 verts = first_frame.vertices
                 faces = first_frame.faces  
 
-                input_src = cond[:,:1].repeat(1,17,1,1)
-                input_tgt = cond[:,:17]
+                input_src = cond[:,:1].repeat(1,T,1,1)
+                input_tgt = cond[:,:T]
                 
                 shape_cond = shape_sampled_array[:1,:].repeat(T,1,1).unsqueeze(0)
                 
@@ -222,7 +222,7 @@ def main():
                                                         cond_tgt_emb= input_tgt,
                                                         random = False).squeeze(0)
                 
-                deformed_verts = deform_ae.decode(deform_sampled_array.float(),torch.tensor(verts).unsqueeze(0).repeat(17,1,1).float().to(device)).squeeze(0)
+                deformed_verts = deform_ae.decode(deform_sampled_array.float(),torch.tensor(verts).unsqueeze(0).repeat(T,1,1).float().to(device)).squeeze(0)
 
                 deformed_mesh_list = []
                 for j in range(deformed_verts.shape[0]):
