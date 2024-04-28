@@ -210,10 +210,10 @@ def main():
                 verts = first_frame.vertices
                 faces = first_frame.faces  
 
-                input_src = cond[:,:1].repeat(1,T,1,1)
-                input_tgt = cond[:,:T]
+                input_src = cond[:,:1].repeat(1,T-1,1,1)
+                input_tgt = cond[:,1:T]
                 
-                shape_cond = shape_sampled_array[:1,:].repeat(T,1,1).unsqueeze(0)
+                shape_cond = shape_sampled_array[:1,:].repeat(T-1,1,1).unsqueeze(0)
                 
                 deform_sampled_array = deform_model.sample(device, 
                                                         cond = None,
@@ -222,9 +222,9 @@ def main():
                                                         cond_tgt_emb= input_tgt,
                                                         random = False).squeeze(0)
                 
-                deformed_verts = deform_ae.decode(deform_sampled_array.float(),torch.tensor(verts).unsqueeze(0).repeat(T,1,1).float().to(device)).squeeze(0)
+                deformed_verts = deform_ae.decode(deform_sampled_array.float(),torch.tensor(verts).unsqueeze(0).repeat(T-1,1,1).float().to(device)).squeeze(0)
 
-                deformed_mesh_list = []
+                deformed_mesh_list = [first_frame]
                 for j in range(deformed_verts.shape[0]):
                     defomed_mesh = trimesh.Trimesh(vertices= deformed_verts[j].cpu().numpy(), faces=faces, process=False)
                     deformed_mesh_list.append(defomed_mesh)
