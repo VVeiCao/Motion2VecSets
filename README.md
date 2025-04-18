@@ -40,7 +40,7 @@ Install the environment following `scripts/init_environment.sh`, to install with
 
 ## Data preparation and Pretrained models
 
-You can find the data preparation scripts in `/home/liang/m2v/dataset/dataset_generate` or you can directly download the [preprocessed dataset](https://nextcloud.in.tum.de/index.php/s/PQWBSJQaWyH6jxN).
+You can find the data preparation scripts in `dataset/dataset_generate` or you can directly download the [preprocessed dataset](https://drive.google.com/drive/folders/1fjrkFgB793HH7--qtme-X4p2ZMVywRgF?usp=drive_link).
 
 For pretrained models, you can directly put them in the `ckpts` directory, and there are two subfolders `DFAUST` and `DT4D` for two datasets respectively, you can get them from the [Google Drive](https://drive.google.com/drive/folders/1Fg7glEYe4Dy4i5aezTP-MIuiNClzDuMc?usp=sharing).
 
